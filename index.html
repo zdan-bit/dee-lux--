@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dee Luxe 🌸 — Premium Fashion Boutique</title>
+<style>
+:root{--pink:#ff6fa5;--gold:#e8c27a;--dark:#1a1220;--card:#241a2e;--text:#f5e9f0;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
+.blobs{position:fixed;inset:0;z-index:0;overflow:hidden;filter:blur(60px);opacity:.5;}
+.blob{position:absolute;border-radius:50%;animation:float 18s ease-in-out infinite;}
+.b1{width:400px;height:400px;background:radial-gradient(circle,#ff6fa5,transparent 70%);top:-100px;left:-100px;}
+.b2{width:500px;height:500px;background:radial-gradient(circle,#e8c27a,transparent 70%);bottom:-150px;right:-100px;animation-duration:22s;}
+.b3{width:350px;height:350px;background:radial-gradient(circle,#a86fff,transparent 70%);top:40%;left:50%;animation-duration:26s;}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-40px) scale(1.15)}66%{transform:translate(-50px,50px) scale(.9)}}
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:rgba(26,18,32,.7);display:flex;justify-content:space-between;align-items:center;padding:16px 5%;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap;gap:10px;}
+.logo{font-size:1.5em;font-weight:700;letter-spacing:1px;color:var(--gold);text-shadow:0 0 20px rgba(232,194,122,.5);}
+.logo span{color:var(--pink);}
+nav a{color:var(--text);text-decoration:none;margin-left:20px;font-size:.85em;position:relative;transition:.3s;}
+nav a:hover{color:var(--pink);}
+nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--pink);transition:.3s;}
+nav a:hover::after{width:100%;}
+.wa-btn{background:#25d366;color:#0a1a10;font-weight:700;padding:9px 16px;border-radius:30px;text-decoration:none;font-size:.85em;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(37,211,102,.4);transition:.3s;}
+.wa-btn:hover{transform:scale(1.05);}
+.hero{position:relative;z-index:1;text-align:center;padding:90px 6% 60px;}
+.hero h1{font-size:clamp(2.4em,6vw,4.2em);font-weight:800;background:linear-gradient(90deg,#ff6fa5,#e8c27a,#a86fff,#ff6fa5);background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;}
+@keyframes shine{to{background-position:300% center;}}
+.hero p{margin-top:16px;font-size:1.15em;color:#d9c3d6;max-width:600px;margin-inline:auto;}
+.cta-row{margin-top:28px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.cta{display:inline-block;padding:15px 38px;border-radius:50px;background:linear-gradient(135deg,var(--pink),var(--gold));color:#1a1220;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(255,111,165,.4);transition:.3s;}
+.cta:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 16px 40px rgba(255,111,165,.6);}
+.cta.alt{background:none;border:2px solid #25d366;color:#25d366;}
+section{position:relative;z-index:1;padding:56px 6%;}
+.section-title{text-align:center;font-size:2.1em;margin-bottom:8px;color:var(--gold);}
+.section-sub{text-align:center;color:#c9aecb;margin-bottom:40px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;}
+.card{background:linear-gradient(160deg,var(--card),#2e2038);border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.08);transition:.4s;opacity:0;transform:translateY(40px);animation:rise .8s forwards;}
+.card:nth-child(odd){animation-delay:.1s;} .card:nth-child(even){animation-delay:.25s;}
+@keyframes rise{to{opacity:1;transform:translateY(0);}}
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 50px rgba(255,111,165,.25);border-color:var(--pink);}
+.thumb{height:230px;overflow:hidden;position:relative;}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:.6s;}
+.card:hover .thumb img{transform:scale(1.1);}
+.thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,32,.5),transparent 40%);}
+.info{padding:18px 20px 24px;}
+.info h3{font-size:1.12em;color:var(--text);margin-bottom:6px;}
+.info p{font-size:.85em;color:#b79fb8;margin-bottom:12px;}
+.price{display:flex;justify-content:space-between;align-items:center;}
+.price span{font-weight:700;color:var(--pink);font-size:1.2em;}
+.buy{background:none;border:1px solid var(--pink);color:var(--pink);padding:8px 16px;border-radius:20px;cursor:pointer;font-size:.85em;transition:.3s;}
+.buy:hover{background:var(--pink);color:#1a1220;}
+.marquee{overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);padding:14px 0;background:rgba(255,255,255,.03);}
+.marquee span{display:inline-block;padding-left:100%;animation:scroll 24s linear infinite;color:var(--gold);letter-spacing:2px;font-size:.9em;}
+@keyframes scroll{to{transform:translateX(-100%);}}
+.about{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:center;text-align:left;}
+.about div{max-width:480px;}
+.about h2{color:var(--gold);font-size:1.8em;margin-bottom:14px;}
+.about p{color:#d9c3d6;line-height:1.7;}
+.stats{display:flex;gap:30px;margin-top:24px;}
+.stats div{text-align:center;}
+.stats b{display:block;font-size:1.6em;color:var(--pink);}
+.float-wa{position:fixed;bottom:26px;right:26px;z-index:20;background:#25d366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);animation:pulse 2.4s infinite;text-decoration:none;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+.float-wa svg{width:30px;height:30px;fill:#0a1a10;}
+footer{position:relative;z-index:1;text-align:center;padding:50px 6% 90px;color:#a88ba8;border-top:1px solid rgba(255,255,255,.08);}
+.socials a{color:var(--gold);margin:0 10px;text-decoration:none;font-size:1.1em;transition:.3s;}
+.socials a:hover{color:var(--pink);transform:translateY(-3px);display:inline-block;}
+
+.thanks{max-width:700px;margin:0 auto;text-align:center;padding:44px 34px;border-radius:26px;
+  background:linear-gradient(160deg,#2e2038,#241a2e);border:1px solid rgba(255,111,165,.25);
+  box-shadow:0 20px 60px rgba(255,111,165,.15);position:relative;overflow:hidden;}
+.thanks::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(255,111,165,.15),transparent 60%);}
+.thanks h2{color:var(--gold);font-size:1.6em;margin-bottom:18px;position:relative;}
+.thanks p{color:#e6d3e3;line-height:1.8;font-size:1em;margin-bottom:14px;position:relative;}
+.thanks .sign{margin-top:20px;font-weight:700;color:var(--pink);font-size:1.15em;position:relative;}
+.thanks .sub{color:var(--gold);font-size:.9em;margin-top:6px;position:relative;}
+
+.logo-img{height:48px;width:auto;border-radius:10px;vertical-align:middle;box-shadow:0 4px 14px rgba(232,194,122,.4);}
+.hero-logo{width:min(260px,60vw);margin:0 auto 18px;border-radius:26px;
+  box-shadow:0 0 50px rgba(255,111,165,.45),0 0 90px rgba(232,194,122,.25);
+  animation:logoGlow 4s ease-in-out infinite;position:relative;z-index:2;}
+@keyframes logoGlow{0%,100%{box-shadow:0 0 50px rgba(255,111,165,.45),0 0 90px rgba(232,194,122,.25);}
+  50%{box-shadow:0 0 70px rgba(255,111,165,.7),0 0 120px rgba(232,194,122,.45);}}
+
+/* ================= DEE LUXE PINK LUXURY UPGRADE ================= */
+:root{
+  --pink:#ff5fa2;
+  --pink-soft:#ff9bc4;
+  --pink-deep:#d92f78;
+  --rose:#7d3156;
+  --gold:#f1d18a;
+  --dark:#100a12;
+  --dark-2:#170d19;
+  --card:#211322;
+  --text:#fff4fa;
+  --muted:#d7b8c9;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(255,95,162,.14),transparent 28%),
+    radial-gradient(circle at 88% 70%,rgba(241,209,138,.10),transparent 25%),
+    linear-gradient(135deg,#100a12 0%,#160b18 45%,#0d080f 100%);
+  color:var(--text);
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+
+header{
+  padding:12px 4%;
+  min-height:76px;
+  background:rgba(16,10,18,.78);
+  border-bottom:1px solid rgba(255,159,196,.18);
+  box-shadow:0 8px 35px rgba(0,0,0,.25);
+  backdrop-filter:blur(22px) saturate(140%);
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  color:var(--gold);
+  text-shadow:0 0 24px rgba(255,95,162,.32);
+}
+.logo-img{
+  height:52px;
+  border-radius:14px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 8px 30px rgba(255,95,162,.28);
+  transition:.45s cubic-bezier(.2,.8,.2,1);
+}
+.logo-img:hover{transform:rotate(-2deg) scale(1.05);}
+
+nav{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;}
+nav a{
+  margin-left:0;
+  padding:9px 10px;
+  border-radius:12px;
+  color:#f7dce9;
+  font-size:.82em;
+}
+nav a:hover{
+  color:#fff;
+  background:rgba(255,95,162,.10);
+  text-shadow:0 0 12px rgba(255,95,162,.8);
+}
+nav a::after{
+  left:12px;right:12px;width:auto;
+  background:linear-gradient(90deg,var(--pink),var(--gold));
+  border-radius:4px;
+}
+
+.wa-btn{
+  background:linear-gradient(135deg,#ff6fa8,#e54888);
+  color:white;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 24px rgba(255,79,145,.28);
+}
+.wa-btn:hover{box-shadow:0 12px 32px rgba(255,79,145,.45);}
+
+.hero{
+  padding:105px 6% 82px;
+  min-height:620px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.hero-logo{
+  width:min(300px,68vw);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 0 0 8px rgba(255,95,162,.035),0 0 70px rgba(255,95,162,.42),0 25px 80px rgba(0,0,0,.38);
+  transition:.5s;
+}
+.hero-logo:hover{transform:translateY(-7px) scale(1.025);}
+.hero h1{
+  letter-spacing:-1px;
+  text-shadow:0 0 35px rgba(255,95,162,.18);
+}
+.hero p{
+  color:#e5c9d7;
+  line-height:1.8;
+  max-width:680px;
+}
+.cta-row{gap:12px;}
+.cta{
+  padding:14px 30px;
+  border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(135deg,#ff6fa8,#e94387 55%,#efc878);
+  box-shadow:0 12px 34px rgba(255,95,162,.27);
+}
+.cta:hover{box-shadow:0 18px 45px rgba(255,95,162,.42);}
+
+section{
+  padding:72px 5%;
+}
+section:nth-of-type(even){
+  background:linear-gradient(180deg,transparent,rgba(255,95,162,.025),transparent);
+}
+.section-title{
+  font-size:clamp(1.8em,4vw,2.55em);
+  letter-spacing:.5px;
+  text-shadow:0 0 25px rgba(255,95,162,.16);
+}
+.section-sub{
+  color:#d8b8ca;
+  max-width:720px;
+  margin-left:auto;margin-right:auto;
+}
+
+.grid{
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  gap:30px;
+  perspective:1200px;
+}
+.card{
+  position:relative;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.055),transparent 25%),
+    linear-gradient(160deg,#261526,#17101c);
+  border:1px solid rgba(255,159,196,.13);
+  border-radius:26px;
+  box-shadow:0 14px 45px rgba(0,0,0,.25);
+  transform-style:preserve-3d;
+}
+.card::before{
+  content:"";
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  border-radius:26px;
+  background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.08) 48%,transparent 62%);
+  transform:translateX(-120%);
+  transition:.7s;
+}
+.card:hover::before{transform:translateX(120%);}
+.card:hover{
+  transform:translateY(-12px) rotateX(2deg) rotateY(-1deg) scale(1.018);
+  border-color:rgba(255,95,162,.55);
+  box-shadow:0 24px 65px rgba(255,55,135,.18),0 8px 25px rgba(0,0,0,.35);
+}
+.thumb{
+  height:270px;
+  background:#130b15;
+}
+.thumb img{
+  filter:saturate(1.08) contrast(1.03);
+}
+.card:hover .thumb img{
+  transform:scale(1.07);
+  filter:saturate(1.2) contrast(1.05);
+}
+.thumb::after{
+  background:linear-gradient(to top,rgba(18,8,17,.82),transparent 48%,rgba(255,95,162,.06));
+}
+.info{padding:20px 20px 24px;}
+.info h3{
+  font-size:1.08em;
+  letter-spacing:.2px;
+}
+.info p{color:#c7a9ba;line-height:1.55;}
+.price span{
+  color:#ff8bb8;
+  text-shadow:0 0 14px rgba(255,95,162,.3);
+}
+.buy{
+  border-color:#ff75ad;
+  background:rgba(255,95,162,.06);
+  font-weight:700;
+}
+.buy:hover{
+  background:linear-gradient(135deg,#ff6fa8,#e94387);
+  color:#fff;
+  box-shadow:0 7px 20px rgba(255,95,162,.28);
+}
+
+.marquee{
+  background:linear-gradient(90deg,rgba(255,95,162,.06),rgba(241,209,138,.05),rgba(255,95,162,.06));
+  border-color:rgba(255,159,196,.12);
+}
+.marquee span{
+  color:#ffd9e8;
+  text-shadow:0 0 12px rgba(255,95,162,.35);
+}
+
+.about{
+  padding:36px;
+  max-width:1050px;
+  margin:auto;
+  border:1px solid rgba(255,159,196,.12);
+  border-radius:30px;
+  background:linear-gradient(145deg,rgba(255,95,162,.055),rgba(255,255,255,.018));
+  box-shadow:0 25px 70px rgba(0,0,0,.18);
+}
+.about h2{color:#ffd98f;}
+.about p{color:#dfc3d2;}
+.stats{
+  gap:14px;
+  flex-wrap:wrap;
+}
+.stats div{
+  min-width:110px;
+  padding:14px 18px;
+  border-radius:18px;
+  background:rgba(255,95,162,.055);
+  border:1px solid rgba(255,159,196,.10);
+}
+.stats b{color:#ff86b5;}
+
+.thanks{
+  background:
+    radial-gradient(circle at 10% 0%,rgba(255,95,162,.16),transparent 40%),
+    linear-gradient(145deg,#29152a,#18101d);
+  border-color:rgba(255,95,162,.22);
+  box-shadow:0 25px 80px rgba(255,95,162,.10);
+}
+.thanks h2{color:#ffd98f;}
+.thanks .sign{color:#ff86b5;}
+
+.float-wa{
+  width:58px;height:58px;
+  background:linear-gradient(135deg,#ff70aa,#db3e82);
+  box-shadow:0 10px 30px rgba(255,65,135,.35);
+}
+.float-wa svg{fill:#fff;}
+
+footer{
+  background:linear-gradient(180deg,transparent,rgba(255,95,162,.035));
+  border-top-color:rgba(255,159,196,.12);
+}
+.socials a{color:#f1d18a;}
+.socials a:hover{color:#ff75ad;}
+
+.blobs{opacity:.34;filter:blur(75px);}
+.b1{background:radial-gradient(circle,#ff4f9a,transparent 70%);}
+.b2{background:radial-gradient(circle,#f0c96e,transparent 70%);}
+.b3{background:radial-gradient(circle,#e45a9b,transparent 70%);}
+
+@media(max-width:900px){
+  header{justify-content:center;}
+  nav{order:3;width:100%;overflow-x:auto;justify-content:flex-start;padding:4px 0 2px;scrollbar-width:none;}
+  nav::-webkit-scrollbar{display:none;}
+  .hero{min-height:540px;padding-top:70px;}
+}
+@media(max-width:600px){
+  header{padding:10px 4%;}
+  .logo-img{height:45px;}
+  .wa-btn{padding:8px 12px;}
+  .hero{padding:72px 5% 55px;}
+  .hero-logo{width:min(245px,72vw);}
+  section{padding:52px 5%;}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .thumb{height:210px;}
+  .info{padding:14px 13px 17px;}
+  .info h3{font-size:.98em;}
+  .info p{font-size:.78em;}
+  .price span{font-size:1em;}
+  .buy{padding:7px 10px;font-size:.75em;}
+  .about{padding:24px 18px;border-radius:24px;}
+  .stats{justify-content:center;}
+}
+@media(max-width:390px){
+  .grid{grid-template-columns:1fr;}
+  .thumb{height:250px;}
+}
+/* ================= END PINK LUXURY UPGRADE ================= */
+
+</style>
+</head>
+<body>
+<div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<header>
+  <div class="logo"><img class="logo-img" src="images/img-01.jpg" alt="Dee Luxe"></div>
+  <nav><a href="#dresses">Dresses</a><a href="#jeans">Jeans</a><a href="#bags">Bags</a><a href="#sunglasses">Sunglasses</a><a href="#perfume">Perfume</a><a href="#jewelry">Jewelry</a><a href="#wallets">Wallets</a><a href="#shoes">Shoes</a><a href="#bath">Bath&Body</a><a href="#kids">Kids</a><a href="#about">About</a></nav>
+  <a class="wa-btn" href="https://wa.me/263778641722" target="_blank">💬 WhatsApp Us</a>
+</header>
+<div class="hero">
+  <img class="hero-logo" src="images/img-01.jpg" alt="Dee Luxe Boutique Logo">
+  <h1>Dee Luxe Boutique</h1>
+  <p>Curated fashion, fragrance & fine accessories — where everyday luxury meets everyday you. ✨</p>
+  <div class="cta-row">
+    <a class="cta" href="#jeans">Shop The Collection</a>
+    <a class="cta alt" href="https://wa.me/263778641722" target="_blank">Order on WhatsApp</a>
+  </div>
+</div>
+<div class="marquee"><span>✨ NEW ARRIVALS WEEKLY &nbsp; • &nbsp; FREE GIFT WRAP &nbsp; • &nbsp; WORLDWIDE SHIPPING &nbsp; • &nbsp; DM OR WHATSAPP +263 77 864 1722 TO ORDER &nbsp; • &nbsp; DEE LUXE — LUXURY FOR LESS &nbsp; •</span></div>
+
+<section id="jeans">
+  <h2 class="section-title">Girls Denim Collection</h2>
+  <p class="section-sub">Soft-wash, comfort-fit, floral embroidered</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-02.jpg"></div>
+      <div class="info"><h3>Rolled-Cuff Denim Pants</h3><p>Baggy fit, floral embroidery, pink accents</p>
+      <button class="buy">Order</button></div></div></div>
+  </div>
+</section>
+
+<section id="bags">
+  <h2 class="section-title">Bags & Clutches</h2>
+  <p class="section-sub">From daytime totes to evening sparkle</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-03.jpg"></div>
+      <div class="info"><h3>Structured V-Bag</h3><p>Vegan leather, gold hardware — 6 colors available</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-04.jpg"></div>
+      <div class="info"><h3>Grey Canvas Top-Handle Bag</h3><p>Gold flower charm & chain detail</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-05.jpg"></div>
+      <div class="info"><h3>Signature Print Satchel</h3><p>Cherry charm, gold zip hardware</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-06.jpg"></div>
+      <div class="info"><h3>White Knot-Strap Flap Bag</h3><p>Silver hardware, crossbody strap</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-07.jpg"></div>
+      <div class="info"><h3>Cream Everyday Tote</h3><p>Roomy shopper with teddy charm</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-08.jpg"></div>
+      <div class="info"><h3>Black Everyday Tote</h3><p>Roomy shopper with teddy charm</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-09.jpg"></div>
+      <div class="info"><h3>Glitter Box Clutch</h3><p>Evening clutch with crystal clasp</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-10.jpg"></div>
+      <div class="info"><h3>Crystal Evening Purse</h3><p>Rhinestone pattern, kiss-lock closure</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-11.jpg"></div>
+      <div class="info"><h3>Mini Top-Handle Bag (5 colors)</h3><p>Structured logo-plate crossbody, white/red/tan/black/brown</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-12.jpg"></div>
+      <div class="info"><h3>Monogram Bag + Cap Set</h3><p>Matching crossbody bag and baseball cap</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-13.jpg"></div>
+      <div class="info"><h3>Black Bow Hobo Bag</h3><p>Knot-strap shoulder bag, gold bow detail</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-14.jpg"></div>
+      <div class="info"><h3>Sky Blue Crossbody + Pouch Set</h3><p>Top-handle bag with matching mini pouch</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-15.jpg"></div>
+      <div class="info"><h3>Brown Shopper Tote</h3><p>Roomy tote with teddy charm</p>
+      <button class="buy">Order</button></div></div></div>
+    
+    
+  </div>
+</section>
+
+<section id="perfume">
+  <h2 class="section-title">Signature Fragrances</h2>
+  <p class="section-sub">100ml Eau de Parfum — long-lasting, richly layered</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-16.jpg"></div>
+      <div class="info"><h3>Launo Intense Blue</h3><p>Fresh aromatic, woody base — Pour Homme</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-17.jpg"></div>
+      <div class="info"><h3>Maison Alhambra Smoky</h3><p>Amber, oud & spice — statement scent</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-18.jpg"></div>
+      <div class="info"><h3>Arabiyat Oud Al Layl</h3><p>Rose, oud & warm spice — Prestige line</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-19.jpg"></div>
+      <div class="info"><h3>Eternal Oud EDP</h3><p>Rich woody oud, natural spray</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-20.jpg"></div>
+      <div class="info"><h3>Maleka Club de Nuit</h3><p>Fruity floral, shimmer violet bottle</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-21.jpg"></div>
+      <div class="info"><h3>Berries Weekend Pink Edition</h3><p>Fruity floral EDP + free deo spray</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-22.jpg"></div>
+      <div class="info"><h3>Lattafa Asad</h3><p>Bold spicy woody — statement for him</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-23.jpg"></div>
+      <div class="info"><h3>Swiss Arabian Shaghaf</h3><p>Aromatic citrus, marine & amber</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-24.jpg"></div>
+      <div class="info"><h3>Lattafa Mayar Cherry Intense</h3><p>Cacao, vanilla, warm spicy gourmand</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-25.jpg"></div>
+      <div class="info"><h3>Lattafa Fakhar</h3><p>Silver floral musk, bold & elegant</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-26.jpg"></div>
+      <div class="info"><h3>Arabiyat Oud Al Layl Midnight</h3><p>Deep smoky oud, midnight edition</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-27.jpg"></div>
+      <div class="info"><h3>Pandora Scents Intense Wayfarer</h3><p>Woody aromatic, Homme EDP</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-28.jpg"></div>
+      <div class="info"><h3>Lattafa Qaa'ed</h3><p>Rich amber oud, gold accented flacon</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-29.jpg"></div>
+      <div class="info"><h3>Lattafa Yara</h3><p>Fruity floral, iconic pink bottle</p>
+      <button class="buy">Order</button></div></div></div>
+    
+  </div>
+</section>
+
+<section id="jewelry">
+  <h2 class="section-title">Jewelry & Accessories</h2>
+  <p class="section-sub">Statement pieces, everyday sparkle</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-30.jpg"></div>
+      <div class="info"><h3>Crystal Bird Brooch</h3><p>Multicolor enamel, gold plated pin</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-31.jpg"></div>
+      <div class="info"><h3>Gold Star Belly Chain</h3><p>Layered body chain, adjustable</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-32.jpg"></div>
+      <div class="info"><h3>Opal Swan Brooch</h3><p>Cat-eye stone feathers, gold plated</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-33.jpg"></div>
+      <div class="info"><h3>Gold Tulip Brooch</h3><p>Pearl accent, crystal pave petals</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-34.jpg"></div>
+      <div class="info"><h3>Crystal Teardrop Pin</h3><p>Statement gem, gold-tone bar</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-35.jpg"></div>
+      <div class="info"><h3>Purple Flower Cluster Brooch</h3><p>Hand-painted enamel petals</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-36.jpg"></div>
+      <div class="info"><h3>Gold Bangle Stack (5pc)</h3><p>Mixed textures, knot & bar design</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-37.jpg"></div>
+      <div class="info"><h3>Silver Chunky Chain Stack (4pc)</h3><p>Curb & paperclip link mix</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-38.jpg"></div>
+      <div class="info"><h3>Gold Chunky Chain Stack (4pc)</h3><p>Curb & paperclip link mix</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-39.jpg"></div>
+      <div class="info"><h3>Gold Layered Chain Bracelet</h3><p>Double-ring charm, curb chain</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-40.jpg"></div>
+      <div class="info"><h3>Marbled Heart Studs</h3><p>Blue swirl resin, statement earrings</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-41.jpg"></div>
+      <div class="info"><h3>Gold Berry Branch Brooch</h3><p>Red bead clusters, crystal pave leaves</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-42.jpg"></div>
+      <div class="info"><h3>Silver Flower Bangle Set</h3><p>Orchid cuff, pearl tennis bracelet, twist bangle</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-43.jpg"></div>
+      <div class="info"><h3>Silver Mixed Bangle Set</h3><p>Hammered disc, knot, ribbed textures</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-44.jpg"></div>
+      <div class="info"><h3>Crystal Leaf Wreath Piece</h3><p>Marquise-cut pave, gold-tone wire</p>
+      <button class="buy">Order</button></div></div></div>
+    
+    
+
+
+    <div class="card">
+      <div class="thumb">
+        <img src="images/img-45.jpg" alt="Lilac Flower Statement Earrings" loading="lazy">
+      </div>
+      <div class="info">
+        <h3>Lilac Flower Statement Earrings</h3>
+        <p>Translucent lilac flowers with pearl and gold-tone details</p>
+        <button class="buy">Order</button>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="thumb">
+        <img src="images/img-46.jpg" alt="Brown Beaded Cluster Earrings" loading="lazy">
+      </div>
+      <div class="info">
+        <h3>Brown Beaded Cluster Earrings</h3>
+        <p>Glossy brown bead clusters with dark statement studs</p>
+        <button class="buy">Order</button>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="thumb">
+        <img src="images/img-47.jpg" alt="White Flower Pearl Earrings" loading="lazy">
+      </div>
+      <div class="info">
+        <h3>White Flower Pearl Earrings</h3>
+        <p>Soft white floral earrings with pearl centre details</p>
+        <button class="buy">Order</button>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="thumb">
+        <img src="images/img-48.jpg" alt="Orange Rose Drop Earrings" loading="lazy">
+      </div>
+      <div class="info">
+        <h3>Orange Rose Drop Earrings</h3>
+        <p>Bright orange floral drops with delicate gold-tone accents</p>
+        <button class="buy">Order</button>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section id="kids">
+  <h2 class="section-title">Kids Corner</h2>
+  <p class="section-sub">Playful, comfy & cute essentials</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-49.jpg"></div>
+      <div class="info"><h3>Bear Fashion Clogs</h3><p>Soft sole, cute charms, toddler sizes</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-50.jpg"></div>
+      <div class="info"><h3>Cute Hair Headband Set</h3><p>Hearts, stars & flowers — assorted</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-51.jpg"></div>
+      <div class="info"><h3>Knit Scrunchie Set (6pc)</h3><p>Neutral tone knit hair ties</p>
+      <button class="buy">Order</button></div></div></div>
+    
+  </div>
+</section>
+
+
+
+<section id="dresses">
+  <h2 class="section-title">Dresses</h2>
+  <p class="section-sub">Statement fits for every occasion</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-52.jpg"></div>
+      <div class="info"><h3>Black Pleated Midi Dress</h3><p>Cap-sleeve, fit-and-flare silhouette</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-53.jpg"></div>
+      <div class="info"><h3>Yellow Puff-Sleeve Midi Dress</h3><p>Button-front, cinched waist</p>
+      <button class="buy">Order</button></div></div></div>
+    
+  </div>
+</section>
+
+<section id="sunglasses">
+  <h2 class="section-title">Sunglasses</h2>
+  <p class="section-sub">Statement shades for every face shape</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-54.jpg"></div>
+      <div class="info"><h3>Gold Shield Sunglasses</h3><p>Panther-head hinge, gradient lens</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-55.jpg"></div>
+      <div class="info"><h3>Black Oversized Sunglasses</h3><p>Gold snake-chain arm detail</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-56.jpg"></div>
+      <div class="info"><h3>Classic Green Aviators</h3><p>Gold frame, dark green lens</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-57.jpg"></div>
+      <div class="info"><h3>Gold & Black Shield</h3><p>Bold aviator-shield hybrid</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-58.jpg"></div>
+      <div class="info"><h3>Oversized Ombre Sunglasses</h3><p>Pearl temple tips, butterfly shape</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-59.jpg"></div>
+      <div class="info"><h3>Taupe Aviators</h3><p>Pink-mauve gradient lens</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-60.jpg"></div>
+      <div class="info"><h3>Black Cat-Eye Sunglasses</h3><p>Gold-ring hinge, bold frame</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-61.jpg"></div>
+      <div class="info"><h3>Brown Round Aviators</h3><p>Green lens, gold T-bar accent</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-62.jpg"></div>
+      <div class="info"><h3>All-Gold Aviators</h3><p>Sleek gold frame, smoke lens</p>
+      <button class="buy">Order</button></div></div></div>
+    
+  </div>
+</section>
+
+
+<section id="bath">
+  <h2 class="section-title">Bath &amp; Body</h2>
+  <p class="section-sub">Everyday self-care treats</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-63.jpg"></div>
+      <div class="info"><h3>Warm Night Shower Gel</h3><p>Dear Body Signature Collection, 295ml</p>
+      <button class="buy">Order</button></div></div></div>
+    
+  </div>
+</section>
+
+
+<section id="thanks">
+  <div class="thanks">
+    <h2>💕✨ A Big Thank You To Our Amazing Customers! ✨💕</h2>
+    <p>Every order, every referral, every message, every like and every purchase means SO MUCH to us! 🥹❤️ You're not just customers — you're a huge part of the <b>Dee Luxe family!</b> 🛍️✨</p>
+    <p>Thank you for trusting us, supporting our small business and always coming back for more. 🥰 Your love and support keep us going and inspire us to do even better! 💪🏽❤️</p>
+    <p>We appreciate you more than words can say! 🫶🏽✨</p>
+    <div class="sign">With love, Dee Luxe 👜💎❤️</div>
+    <div class="sub">Your support is our motivation! ✨</div>
+  </div>
+</section>
+
+
+<section id="wallets">
+  <h2 class="section-title">Wallets &amp; Small Goods</h2>
+  <p class="section-sub">Compact essentials with a luxe finish</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-64.jpg"></div>
+      <div class="info"><h3>Taupe Chain-Frame Wallet</h3><p>Crushed leather, gold chain emblem</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-65.jpg"></div>
+      <div class="info"><h3>Red Croc Card Holder</h3><p>Snap-strap, multi-slot design</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-66.jpg"></div>
+      <div class="info"><h3>Sage Woven Trifold Wallet</h3><p>Forever Young gold plaque detail</p>
+      <button class="buy">Order</button></div></div></div>
+    <div class="card"><div class="thumb"><img src="images/img-67.jpg"></div>
+      <div class="info"><h3>Black Woven Trifold Wallet</h3><p>Forever Young gold plaque detail</p>
+      <button class="buy">Order</button></div></div></div>
+    
+  </div>
+</section>
+
+<section id="shoes">
+  <h2 class="section-title">Shoes</h2>
+  <p class="section-sub">Step out in sparkle</p>
+  <div class="grid">
+    <div class="card"><div class="thumb"><img src="images/img-68.jpg"></div>
+      <div class="info"><h3>Beaded Rhinestone Sandal</h3><p>Toe-post flip flop, pearl & crystal beading</p>
+      <button class="buy">Order</button></div></div></div>
+    
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div>
+      <h2>About Dee Luxe</h2>
+      <p>Dee Luxe is a boutique dedicated to bringing luxury-inspired fashion, fragrance and accessories to everyone. Every piece is hand-picked for quality, style and everyday elegance — from kids' denim to evening clutches and signature scents.</p>
+      <div class="stats"><div><b>500+</b>Happy Clients</div><div><b>120+</b>Products</div><div><b>4.9★</b>Rating</div></div>
+    </div>
+  </div>
+</section>
+
+
+<style id="dee-luxe-new-products">
+  .dl-new-products-section {
+    position: relative;
+    padding: 95px 5vw 110px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 10% 10%, rgba(255, 80, 180, .14), transparent 30%),
+      radial-gradient(circle at 90% 80%, rgba(255, 210, 235, .18), transparent 28%),
+      linear-gradient(180deg, rgba(255,248,252,.96), rgba(255,235,246,.92));
+  }
+  .dl-new-products-section::before {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(225, 74, 151, .13);
+    border-radius: 34px;
+    pointer-events: none;
+  }
+  .dl-new-heading {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto 42px;
+    max-width: 780px;
+  }
+  .dl-new-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.8);
+    border: 1px solid rgba(225,74,151,.22);
+    color: #b62b76;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(170,50,110,.08);
+  }
+  .dl-new-heading h2 {
+    margin: 17px 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.1rem, 4vw, 3.8rem);
+    color: #23131d;
+    letter-spacing: -.035em;
+  }
+  .dl-new-heading h2 span {
+    color: #e33a91;
+  }
+  .dl-new-heading p {
+    margin: 0;
+    color: #7d6471;
+    line-height: 1.7;
+  }
+  .dl-new-grid {
+    position: relative;
+    z-index: 1;
+    max-width: 1450px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .dl-new-product {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 24px;
+    background: rgba(255,255,255,.94);
+    border: 1px solid rgba(216, 80, 143, .14);
+    box-shadow: 0 16px 45px rgba(105, 34, 72, .10);
+    transform: translateZ(0);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+  }
+  .dl-new-product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 65px rgba(190, 47, 119, .20);
+  }
+  .dl-new-image-wrap {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #f8eef3;
+  }
+  .dl-new-image-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease;
+  }
+  .dl-new-product:hover .dl-new-image-wrap img {
+    transform: scale(1.055);
+    filter: saturate(1.05) contrast(1.02);
+  }
+  .dl-new-badge {
+    position: absolute;
+    z-index: 3;
+    top: 13px;
+    left: 13px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(135deg, #e83c96, #b91f6d);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(186,31,109,.28);
+  }
+  .dl-new-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,.32) 48%, transparent 65%);
+    transform: translateX(-130%);
+    transition: transform .8s ease;
+  }
+  .dl-new-product:hover .dl-new-shine {
+    transform: translateX(130%);
+  }
+  .dl-new-info {
+    padding: 18px 18px 21px;
+  }
+  .dl-new-number {
+    color: #c45788;
+    font-size: .67rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+  }
+  .dl-new-info h3 {
+    margin: 7px 0 5px;
+    color: #24151d;
+    font-size: 1.05rem;
+  }
+  .dl-new-info p {
+    margin: 0;
+    color: #927783;
+    font-size: .82rem;
+  }
+  @media (max-width: 1100px) {
+    .dl-new-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .dl-new-products-section { padding: 70px 4vw 80px; }
+    .dl-new-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .dl-new-product { border-radius: 18px; }
+    .dl-new-info { padding: 14px; }
+    .dl-new-info h3 { font-size: .93rem; }
+  }
+  @media (max-width: 430px) {
+    .dl-new-grid { grid-template-columns: 1fr 1fr; }
+    .dl-new-badge { font-size: .58rem; padding: 6px 8px; }
+  }
+</style>
+
+<section class="dl-new-products-section" id="new-collection">
+  <div class="dl-new-heading">
+    <span class="dl-new-kicker">✦ Fresh arrivals</span>
+    <h2>New from <span>Dee Luxe</span></h2>
+    <p>Real product pieces from your latest collection — sandals and statement jewelry presented in a clean luxury gallery.</p>
+  </div>
+  <div class="dl-new-grid">
+    
+      <article class="dl-new-product" data-category="Sandals">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Sandals</span>
+          <img src="images/img-69.jpg" alt="Pearl Luxe Sandal" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 01</span>
+          <h3>Pearl Luxe Sandal</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Sandals">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Sandals</span>
+          <img src="images/img-70.jpg" alt="Emerald Statement Slide" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 02</span>
+          <h3>Emerald Statement Slide</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Sandals">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Sandals</span>
+          <img src="images/img-71.jpg" alt="Denim Crystal Slide" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 03</span>
+          <h3>Denim Crystal Slide</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Sandals">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Sandals</span>
+          <img src="images/img-72.jpg" alt="Crystal Bow Glam Slide" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 04</span>
+          <h3>Crystal Bow Glam Slide</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Jewelry">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Jewelry</span>
+          <img src="images/img-73.jpg" alt="Floral Gold Necklace" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 05</span>
+          <h3>Floral Gold Necklace</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Jewelry">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Jewelry</span>
+          <img src="images/img-74.jpg" alt="Modern Gold Loop Necklace" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 06</span>
+          <h3>Modern Gold Loop Necklace</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Jewelry">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Jewelry</span>
+          <img src="images/img-75.jpg" alt="Floral Double-Pendant Necklace" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 07</span>
+          <h3>Floral Double-Pendant Necklace</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Jewelry">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Jewelry</span>
+          <img src="images/img-76.jpg" alt="Silver Butterfly Necklace" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 08</span>
+          <h3>Silver Butterfly Necklace</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Jewelry">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Jewelry</span>
+          <img src="images/img-77.jpg" alt="Gold Teardrop Necklace" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 09</span>
+          <h3>Gold Teardrop Necklace</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+      <article class="dl-new-product" data-category="Jewelry">
+        <div class="dl-new-image-wrap">
+          <span class="dl-new-badge">Jewelry</span>
+          <img src="images/img-78.jpg" alt="Gold Butterfly Necklace" loading="lazy">
+          <div class="dl-new-shine"></div>
+        </div>
+        <div class="dl-new-info">
+          <span class="dl-new-number">DEE LUXE • 10</span>
+          <h3>Gold Butterfly Necklace</h3>
+          <p>New Dee Luxe collection</p>
+        </div>
+      </article>
+    
+  </div>
+</section>
+
+<footer>
+  <img class="logo-img" style="height:60px;margin-bottom:10px;" src="images/img-01.jpg" alt="Dee Luxe">
+  <p>Order via WhatsApp or DM — new drops every week.</p>
+  <p style="margin-top:10px;color:var(--gold);font-weight:600;">📱 +263 77 864 1722</p>
+  <div class="socials"><a href="https://wa.me/263778641722" target="_blank">WhatsApp</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+  <p style="margin-top:20px;font-size:.8em;">© 2026 Dee Luxe Boutique. All rights reserved.</p>
+</footer>
+
+<a class="float-wa" href="https://wa.me/263778641722" target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15.001c0 2.386.64 4.62 1.755 6.545L4 29l7.641-1.716A11.94 11.94 0 0016 27.002C22.628 27.002 28 21.63 28 15.001 28 8.373 22.628 3 16.001 3zm0 21.8c-1.94 0-3.75-.57-5.27-1.55l-.378-.24-4.53 1.017 1.04-4.42-.25-.39A9.76 9.76 0 016.2 15c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8zm5.36-7.34c-.29-.145-1.72-.85-1.99-.945-.267-.097-.46-.145-.654.145-.194.29-.75.945-.92 1.14-.17.194-.34.218-.63.073-.29-.145-1.225-.451-2.334-1.44-.863-.77-1.446-1.72-1.615-2.01-.17-.29-.018-.446.127-.59.13-.13.29-.34.435-.51.145-.17.194-.29.29-.485.097-.194.048-.364-.024-.51-.073-.145-.654-1.576-.897-2.158-.236-.568-.477-.49-.654-.5-.17-.008-.363-.01-.557-.01-.194 0-.51.073-.777.363-.267.29-1.018.995-1.018 2.426s1.043 2.813 1.188 3.008c.145.194 2.053 3.135 4.975 4.397.695.3 1.238.48 1.66.614.697.222 1.332.19 1.834.115.56-.083 1.72-.703 1.963-1.382.242-.68.242-1.262.17-1.382-.073-.12-.267-.194-.556-.34z"/></svg>
+</a>
+
+<script>
+(function(){
+  var phone = "263778641722";
+  var cart = [];
+  try { cart = JSON.parse(localStorage.getItem('dlCart') || '[]'); } catch(e){ cart = []; }
+
+  function saveCart(){
+    try { localStorage.setItem('dlCart', JSON.stringify(cart)); } catch(e){}
+    renderCart();
+  }
+
+  function addToCart(name, price){
+    var existing = cart.find(function(i){ return i.name === name; });
+    if(existing){ existing.qty++; }
+    else { cart.push({name:name, price:price, qty:1}); }
+    saveCart();
+    openCart();
+  }
+
+  function changeQty(index, delta){
+    cart[index].qty += delta;
+    if(cart[index].qty <= 0){ cart.splice(index,1); }
+    saveCart();
+  }
+
+  function removeFromCart(index){
+    cart.splice(index,1);
+    saveCart();
+  }
+
+  function cartCount(){
+    return cart.reduce(function(sum,i){ return sum + i.qty; }, 0);
+  }
+
+  function renderCart(){
+    var countEl = document.getElementById('dl-cart-count');
+    if(countEl) countEl.textContent = cartCount();
+
+    var listEl = document.getElementById('dl-cart-items');
+    if(!listEl) return;
+
+    if(cart.length === 0){
+      listEl.innerHTML = '<p style="text-align:center;color:#b79fb8;padding:24px 0;">Your cart is empty 🌸</p>';
+      return;
+    }
+
+    listEl.innerHTML = cart.map(function(item, idx){
+      return '<div class="dl-cart-row">' +
+        '<div class="dl-cart-row-info"><strong>' + item.name + '</strong>' +
+        (item.price ? '<span>' + item.price + '</span>' : '') + '</div>' +
+        '<div class="dl-cart-row-controls">' +
+          '<button class="dl-qty-btn" data-action="dec" data-idx="' + idx + '">−</button>' +
+          '<span>' + item.qty + '</span>' +
+          '<button class="dl-qty-btn" data-action="inc" data-idx="' + idx + '">+</button>' +
+          '<button class="dl-remove-btn" data-idx="' + idx + '">✕</button>' +
+        '</div></div>';
+    }).join('');
+
+    listEl.querySelectorAll('.dl-qty-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var idx = parseInt(btn.getAttribute('data-idx'), 10);
+        changeQty(idx, btn.getAttribute('data-action') === 'inc' ? 1 : -1);
+      });
+    });
+    listEl.querySelectorAll('.dl-remove-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        removeFromCart(parseInt(btn.getAttribute('data-idx'), 10));
+      });
+    });
+  }
+
+  function openCart(){
+    var panel = document.getElementById('dl-cart-panel');
+    if(panel) panel.classList.add('dl-cart-open');
+  }
+  function closeCart(){
+    var panel = document.getElementById('dl-cart-panel');
+    if(panel) panel.classList.remove('dl-cart-open');
+  }
+
+  // Hook up every "Order" button to add the product to the cart
+  document.querySelectorAll('.buy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var info = btn.closest('.info');
+      var name = info.querySelector('h3') ? info.querySelector('h3').textContent.trim() : 'this item';
+      var priceEl = info.querySelector('.price span');
+      var price = priceEl ? priceEl.textContent.trim() : '';
+      addToCart(name, price);
+    });
+  });
+
+  // Build the floating cart button
+  var cartBtn = document.createElement('div');
+  cartBtn.id = 'dl-cart-btn';
+  cartBtn.innerHTML = '🛍️ <span id="dl-cart-count">0</span>';
+  cartBtn.setAttribute('title','View your cart');
+  document.body.appendChild(cartBtn);
+  cartBtn.addEventListener('click', openCart);
+
+  // Build the slide-out cart panel
+  var panel = document.createElement('div');
+  panel.id = 'dl-cart-panel';
+  panel.innerHTML =
+    '<div class="dl-cart-header"><h3>Your Order</h3><button id="dl-cart-close" aria-label="Close cart">✕</button></div>' +
+    '<div id="dl-cart-items"></div>' +
+    '<button id="dl-cart-checkout">Checkout on WhatsApp 💬</button>';
+  document.body.appendChild(panel);
+
+  document.getElementById('dl-cart-close').addEventListener('click', closeCart);
+
+  // Checkout: build one WhatsApp message summarizing the whole order
+  document.getElementById('dl-cart-checkout').addEventListener('click', function(){
+    if(cart.length === 0){
+      alert('Your cart is empty! Add something you love first 💕');
+      return;
+    }
+    var lines = cart.map(function(item){
+      return '• ' + item.name + (item.price ? ' (' + item.price + ')' : '') + '  x' + item.qty;
+    });
+    var msg = "Hi Dee Luxe! 🌸 I'd like to order:\n" + lines.join('\n') +
+      "\n\nPlease confirm availability and total. Thank you! 💖";
+    window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(msg), '_blank');
+  });
+
+  renderCart();
+})();
+</script>
+
+<style id="dee-luxe-cart-and-spacing">
+/* A little extra breathing room between product cards */
+.grid{ gap:34px !important; }
+.card{ margin-bottom:8px; }
+.info{ padding-top:20px !important; padding-bottom:26px !important; }
+
+/* Floating cart button */
+#dl-cart-btn{
+  position:fixed; bottom:26px; right:96px; z-index:21;
+  background:linear-gradient(135deg,#ff6fa5,#e8c27a);
+  color:#1a1220; font-weight:700; font-size:1em;
+  padding:14px 18px; border-radius:50px; cursor:pointer;
+  box-shadow:0 8px 24px rgba(255,111,165,.4);
+  display:flex; align-items:center; gap:6px;
+  transition:transform .3s ease;
+}
+#dl-cart-btn:hover{ transform:scale(1.06); }
+
+/* Slide-out cart panel */
+#dl-cart-panel{
+  position:fixed; top:0; right:-380px; width:340px; max-width:88vw; height:100%;
+  background:#241a2e; color:#f5e9f0; z-index:50; padding:22px;
+  box-shadow:-10px 0 40px rgba(0,0,0,.45);
+  transition:right .35s ease;
+  display:flex; flex-direction:column; overflow-y:auto;
+}
+#dl-cart-panel.dl-cart-open{ right:0; }
+.dl-cart-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+.dl-cart-header h3{ color:#e8c27a; margin:0; }
+#dl-cart-close{ background:none; border:none; color:#f5e9f0; font-size:1.3em; cursor:pointer; }
+.dl-cart-row{ display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.08); }
+.dl-cart-row-info{ display:flex; flex-direction:column; font-size:.9em; max-width:170px; }
+.dl-cart-row-info span{ color:#ff6fa5; font-weight:700; margin-top:2px; }
+.dl-cart-row-controls{ display:flex; align-items:center; gap:8px; }
+.dl-qty-btn{ background:rgba(255,111,165,.15); border:1px solid #ff6fa5; color:#ff6fa5; width:24px; height:24px; border-radius:50%; cursor:pointer; line-height:1; }
+.dl-remove-btn{ background:none; border:none; color:#b79fb8; cursor:pointer; font-size:1em; }
+#dl-cart-checkout{
+  margin-top:18px; background:#25d366; color:#0a1a10; font-weight:700;
+  padding:13px; border:none; border-radius:30px; cursor:pointer; font-size:1em;
+}
+#dl-cart-checkout:hover{ transform:scale(1.02); }
+
+@media(max-width:600px){
+  #dl-cart-btn{ right:20px; bottom:96px; }
+}
+</style>
+
+<style id="dee-luxe-live-luxury">
+/* =========================================================
+   DEE LUXE — LIVE LUXURY MOTION SYSTEM
+   Prices intentionally hidden/removed.
+   Existing products, logo and pink identity are preserved.
+   ========================================================= */
+
+:root{
+  --dl-pink:#ec3f98;
+  --dl-pink-deep:#b81769;
+  --dl-pink-soft:#ffd7eb;
+  --dl-rose:#fff0f7;
+  --dl-gold:#d8a83d;
+  --dl-ink:#24151d;
+}
+
+/* Hide price UI if present anywhere in the original markup */
+.price,.prices,.product-price,.item-price,[data-price],[class*="price"]{
+  display:none !important;
+}
+
+/* Smooth page feel */
+html{scroll-behavior:smooth}
+body{
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 10% 15%,rgba(255,105,190,.09),transparent 24%),
+    radial-gradient(circle at 90% 65%,rgba(255,214,235,.14),transparent 25%),
+    #fffafd;
+}
+
+/* Moving luxury light across the whole page */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-30%;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(circle,rgba(255,74,167,.12) 0 2px,transparent 3px),
+    radial-gradient(circle,rgba(255,196,224,.18) 0 1.5px,transparent 2.5px);
+  background-size:95px 95px,145px 145px;
+  animation:dlParticles 26s linear infinite;
+}
+@keyframes dlParticles{
+  from{transform:translate3d(0,0,0) rotate(0deg)}
+  to{transform:translate3d(-90px,-140px,0) rotate(8deg)}
+}
+
+/* Animated soft aura */
+body::after{
+  content:"";
+  position:fixed;
+  width:42vw;height:42vw;
+  min-width:280px;min-height:280px;
+  right:-15vw;top:18vh;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+  background:radial-gradient(circle,rgba(255,79,174,.13),transparent 67%);
+  filter:blur(12px);
+  animation:dlAura 8s ease-in-out infinite alternate;
+}
+@keyframes dlAura{
+  from{transform:translate(0,0) scale(.9);opacity:.55}
+  to{transform:translate(-8vw,10vh) scale(1.15);opacity:.9}
+}
+
+/* Header glass + live glow */
+header,.header,.navbar{
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  background:rgba(255,250,253,.78)!important;
+  border-bottom:1px solid rgba(236,63,152,.13)!important;
+}
+header::after,.header::after,.navbar::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--dl-pink),#fff,var(--dl-pink),transparent);
+  background-size:200% 100%;
+  animation:dlSweep 4s linear infinite;
+}
+@keyframes dlSweep{to{background-position:200% 0}}
+
+/* Logo breathing glow — logo itself is not replaced */
+.hero-logo,header img,.logo img{
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .5s ease;
+}
+.hero-logo:hover,header img:hover,.logo img:hover{
+  transform:scale(1.045) rotate(-1deg);
+  filter:drop-shadow(0 0 18px rgba(236,63,152,.42));
+}
+
+/* Navigation live underline */
+nav a,.nav a{
+  position:relative;
+  transition:color .3s ease,transform .3s ease;
+}
+nav a::after,.nav a::after{
+  content:"";
+  position:absolute;
+  left:50%;right:50%;bottom:-7px;
+  height:2px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--dl-pink),var(--dl-gold));
+  transition:left .3s ease,right .3s ease;
+}
+nav a:hover,.nav a:hover{
+  color:var(--dl-pink)!important;
+  transform:translateY(-2px);
+}
+nav a:hover::after,.nav a:hover::after{left:8%;right:8%}
+
+/* Hero live shimmer */
+.hero,.hero-section{
+  isolation:isolate;
+  overflow:hidden;
+}
+.hero::before,.hero-section::before{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  pointer-events:none;
+  background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.22) 49%,transparent 61%);
+  transform:translateX(-55%) rotate(4deg);
+  animation:dlHeroShine 8s ease-in-out infinite;
+}
+@keyframes dlHeroShine{
+  0%,42%{transform:translateX(-60%) rotate(4deg)}
+  72%,100%{transform:translateX(60%) rotate(4deg)}
+}
+
+/* Buttons: subtle pulse + magnetic lift */
+button,.btn,.cta,a.button{
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,filter .35s ease;
+}
+button:hover,.btn:hover,.cta:hover,a.button:hover{
+  transform:translateY(-3px);
+  filter:saturate(1.08);
+  box-shadow:0 13px 32px rgba(203,43,119,.20);
+}
+button:active,.btn:active,.cta:active,a.button:active{
+  transform:translateY(0) scale(.98);
+}
+
+/* Product cards: floating 3D motion */
+.product-card,.product,.card,.dl-new-product{
+  transform:translateZ(0);
+  will-change:transform;
+  transition:
+    transform .55s cubic-bezier(.2,.8,.2,1),
+    box-shadow .55s ease,
+    border-color .4s ease;
+}
+.product-card:hover,.product:hover,.card:hover,.dl-new-product:hover{
+  transform:translateY(-9px) rotateX(1deg);
+  box-shadow:
+    0 22px 55px rgba(180,35,111,.16),
+    0 0 0 1px rgba(236,63,152,.08);
+}
+
+/* Product image cinematic zoom */
+.product-card img,.product img,.card img,.dl-new-product img{
+  transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .55s ease;
+}
+.product-card:hover img,.product:hover img,.card:hover img,.dl-new-product:hover img{
+  transform:scale(1.06);
+  filter:saturate(1.06) contrast(1.02);
+}
+
+/* Moving image highlight */
+.product-card .image-wrap,.product .image-wrap,.card .image-wrap,
+.product-card .poster,.product .poster,.dl-new-image-wrap{
+  position:relative;
+  overflow:hidden;
+}
+.product-card .image-wrap::after,.product .image-wrap::after,
+.card .image-wrap::after,.product-card .poster::after,
+.product .poster::after,.dl-new-image-wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.34) 48%,transparent 65%);
+  transform:translateX(-130%);
+  transition:transform .85s ease;
+}
+.product-card:hover .image-wrap::after,.product:hover .image-wrap::after,
+.card:hover .image-wrap::after,.product-card:hover .poster::after,
+.product:hover .poster::after,.dl-new-product:hover .dl-new-image-wrap::after{
+  transform:translateX(130%);
+}
+
+/* New collection gets a gentle floating rhythm */
+.dl-new-product:nth-child(3n+1){animation:dlFloatA 6s ease-in-out infinite}
+.dl-new-product:nth-child(3n+2){animation:dlFloatB 7s ease-in-out infinite}
+.dl-new-product:nth-child(3n){animation:dlFloatC 8s ease-in-out infinite}
+@keyframes dlFloatA{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
+@keyframes dlFloatB{
+  0%,100%{transform:translateY(-2px)}
+  50%{transform:translateY(5px)}
+}
+@keyframes dlFloatC{
+  0%,100%{transform:translateY(3px)}
+  50%{transform:translateY(-4px)}
+}
+.dl-new-product:hover{
+  animation-play-state:paused;
+}
+
+/* Section headings */
+section h2{
+  text-wrap:balance;
+}
+section h2::after{
+  content:"";
+  display:block;
+  width:56px;height:3px;
+  margin:14px auto 0;
+  border-radius:99px;
+  background:linear-gradient(90deg,transparent,var(--dl-pink),var(--dl-gold),transparent);
+  background-size:200% 100%;
+  animation:dlLine 3.5s linear infinite;
+}
+@keyframes dlLine{to{background-position:200% 0}}
+
+/* Marquee / scrolling strips */
+.marquee,.marquee-track,.ticker,.scrolling-track{
+  will-change:transform;
+}
+.marquee-track,.ticker-track,.scrolling-track{
+  animation-timing-function:linear!important;
+}
+
+/* Scroll reveal classes */
+.dl-reveal{
+  opacity:0;
+  transform:translateY(28px) scale(.985);
+  transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1);
+}
+.dl-reveal.dl-visible{
+  opacity:1;
+  transform:none;
+}
+
+/* Tiny live sparkle dots */
+.dl-spark{
+  position:fixed;
+  width:5px;height:5px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  background:#fff;
+  box-shadow:0 0 12px 3px rgba(255,89,174,.75);
+  animation:dlSpark 1.6s ease-out forwards;
+}
+@keyframes dlSpark{
+  0%{opacity:0;transform:scale(.2)}
+  20%{opacity:1}
+  100%{opacity:0;transform:translate(var(--sx),var(--sy)) scale(0)}
+}
+
+/* Respect reduced-motion accessibility */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.001ms!important;
+  }
+}
+
+/* Mobile performance */
+@media(max-width:700px){
+  body::before{background-size:130px 130px,190px 190px}
+  .product-card:hover,.product:hover,.card:hover,.dl-new-product:hover{
+    transform:translateY(-5px);
+  }
+}
+</style>
+
+<script>
+(() => {
+  /* Remove visible price-like text nodes/elements without touching product names. */
+  const priceSelectors = [
+    '.price','.prices','.product-price','.item-price',
+    '[data-price]','[class*="price"]'
+  ];
+  document.querySelectorAll(priceSelectors.join(',')).forEach(el => el.remove());
+
+  /* Live scroll reveal */
+  const candidates = document.querySelectorAll(
+    'section > *, .product-card, .product, .card, .dl-new-product'
+  );
+  candidates.forEach((el,i) => {
+    if (!el.classList.contains('dl-reveal')) {
+      el.classList.add('dl-reveal');
+      el.style.transitionDelay = Math.min((i % 5) * 55, 220) + 'ms';
+    }
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('dl-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.10, rootMargin:'0px 0px -35px 0px'});
+  document.querySelectorAll('.dl-reveal').forEach(el => io.observe(el));
+
+  /* Cursor/touch-friendly soft tilt on larger screens */
+  if (window.matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.product-card,.product,.card,.dl-new-product').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX-r.left)/r.width-.5;
+        const y = (e.clientY-r.top)/r.height-.5;
+        card.style.transform =
+          `perspective(900px) rotateX(${(-y*3).toFixed(2)}deg) rotateY(${(x*4).toFixed(2)}deg) translateY(-7px)`;
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  /* Tiny sparkle trail on clicks/taps */
+  document.addEventListener('pointerdown', e => {
+    const s = document.createElement('span');
+    s.className = 'dl-spark';
+    s.style.left = e.clientX + 'px';
+    s.style.top = e.clientY + 'px';
+    s.style.setProperty('--sx', ((Math.random()-.5)*70)+'px');
+    s.style.setProperty('--sy', ((Math.random()-.5)*70-20)+'px');
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 1700);
+  }, {passive:true});
+
+  /* Give images a graceful load-in effect */
+  document.querySelectorAll('img').forEach(img => {
+    if(img.complete) img.classList.add('dl-loaded');
+    else img.addEventListener('load',()=>img.classList.add('dl-loaded'),{once:true});
+  });
+})();
+</script>
+
+
+<style id="dee-luxe-clean-final">
+/* ==========================================================
+   DEE LUXE — CLEAN LUXURY ART DIRECTION
+   Calm, feminine, polished. No prices.
+   ========================================================== */
+
+html{scroll-behavior:smooth}
+
+body{
+  background:
+    radial-gradient(circle at 50% -10%,rgba(255,205,230,.42),transparent 34%),
+    #fffafd !important;
+}
+
+/* Kill the busy background particle/aura experiment */
+body::before,
+body::after{
+  display:none !important;
+}
+
+/* Quiet glass header */
+header,.header,.navbar{
+  background:rgba(255,250,253,.90)!important;
+  box-shadow:0 8px 28px rgba(80,20,50,.06)!important;
+  border-bottom:1px solid rgba(218,89,145,.13)!important;
+}
+header::after,.header::after,.navbar::after{
+  animation:none!important;
+  background:linear-gradient(90deg,transparent,rgba(226,85,145,.42),transparent)!important;
+}
+
+/* Navigation: elegant, not neon */
+nav a,.nav a{
+  transform:none!important;
+  transition:color .25s ease!important;
+}
+nav a::after,.nav a::after{
+  height:1.5px!important;
+  background:#d84d8d!important;
+  transition:left .25s ease,right .25s ease!important;
+}
+nav a:hover,.nav a:hover{
+  color:#c7377c!important;
+}
+
+/* Hero: sophisticated slow sheen only */
+.hero,.hero-section{
+  position:relative;
+  overflow:hidden;
+}
+.hero::before,.hero-section::before{
+  display:block!important;
+  background:linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255,255,255,.18) 50%,
+    transparent 62%
+  )!important;
+  transform:translateX(-100%)!important;
+  animation:deeLuxeSoftSheen 11s ease-in-out infinite!important;
+}
+@keyframes deeLuxeSoftSheen{
+  0%,45%{transform:translateX(-100%)!important}
+  70%,100%{transform:translateX(100%)!important}
+}
+
+/* Logo: tiny, premium hover */
+.hero-logo,header img,.logo img{
+  transition:transform .35s ease,filter .35s ease!important;
+}
+.hero-logo:hover,header img:hover,.logo img:hover{
+  transform:scale(1.025)!important;
+  filter:drop-shadow(0 5px 15px rgba(210,59,126,.18))!important;
+}
+
+/* Product area — editorial boutique cards */
+.product-card,.product,.card,.dl-new-product{
+  animation:none!important;
+  transform:none!important;
+  border:1px solid rgba(205,89,139,.12)!important;
+  border-radius:20px!important;
+  background:#fff!important;
+  box-shadow:0 8px 28px rgba(91,35,61,.07)!important;
+  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease!important;
+}
+.product-card:hover,.product:hover,.card:hover,.dl-new-product:hover{
+  transform:translateY(-6px)!important;
+  border-color:rgba(210,65,127,.24)!important;
+  box-shadow:0 18px 42px rgba(116,37,76,.12)!important;
+}
+
+/* Product photography should be the star */
+.product-card img,.product img,.card img,.dl-new-product img{
+  transform:none!important;
+  filter:none!important;
+  transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .35s ease!important;
+}
+.product-card:hover img,.product:hover img,.card:hover img,.dl-new-product:hover img{
+  transform:scale(1.025)!important;
+  filter:saturate(1.025)!important;
+}
+
+/* Remove the harsh sweeping image shine */
+.product-card .image-wrap::after,
+.product .image-wrap::after,
+.card .image-wrap::after,
+.product-card .poster::after,
+.product .poster::after,
+.dl-new-image-wrap::after{
+  display:none!important;
+}
+
+/* New collection */
+.dl-new-products-section{
+  padding:90px 5vw 105px!important;
+  background:
+    linear-gradient(180deg,#fffafd 0%,#fff5fa 100%)!important;
+}
+.dl-new-products-section::before{
+  border-color:rgba(214,83,139,.10)!important;
+}
+.dl-new-heading h2{
+  font-weight:500!important;
+  letter-spacing:-.025em!important;
+}
+.dl-new-heading h2 span{
+  color:#d23e82!important;
+}
+.dl-new-kicker{
+  color:#bd3d78!important;
+  background:#fff!important;
+  box-shadow:0 5px 18px rgba(100,30,65,.06)!important;
+}
+
+/* Product badges become understated */
+.dl-new-badge{
+  background:rgba(255,255,255,.93)!important;
+  color:#9d315f!important;
+  border:1px solid rgba(200,63,119,.15)!important;
+  box-shadow:0 4px 14px rgba(80,20,50,.07)!important;
+}
+
+/* Editorial image labels */
+.dl-new-number{
+  color:#b35c80!important;
+}
+.dl-new-info h3{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:500!important;
+  letter-spacing:-.01em!important;
+}
+
+/* Scroll reveal: gentle fade, no zoom */
+.dl-reveal{
+  opacity:0;
+  transform:translateY(16px)!important;
+  transition:opacity .6s ease,transform .6s ease!important;
+}
+.dl-reveal.dl-visible{
+  opacity:1;
+  transform:none!important;
+}
+
+/* Buttons */
+button,.btn,.cta,a.button{
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease!important;
+}
+button:hover,.btn:hover,.cta:hover,a.button:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 10px 24px rgba(190,45,110,.14)!important;
+}
+
+/* Disable click sparkles from the previous version */
+.dl-spark{
+  display:none!important;
+}
+
+/* Section underline — simple and elegant */
+section h2::after{
+  width:42px!important;
+  height:2px!important;
+  margin-top:12px!important;
+  background:#d76a98!important;
+  animation:none!important;
+}
+
+/* Keep mobile calm */
+@media(max-width:700px){
+  .product-card:hover,.product:hover,.card:hover,.dl-new-product:hover{
+    transform:translateY(-3px)!important;
+  }
+}
+</style>
+
+
+<style id="dee-luxe-bold-pink">
+/* DEE LUXE — BOLD PINK EDITION */
+:root{
+  --dee-hot:#ff1493;
+  --dee-pink:#f42b91;
+  --dee-deep:#c90068;
+  --dee-soft:#ffe0ef;
+  --dee-blush:#fff0f7;
+  --dee-ink:#24131c;
+}
+
+/* Stronger overall pink atmosphere */
+body{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(255,20,147,.16),transparent 28%),
+    radial-gradient(circle at 88% 35%,rgba(244,43,145,.11),transparent 25%),
+    linear-gradient(180deg,#fff7fb 0%,#fffafd 48%,#fff1f8 100%) !important;
+}
+
+/* Header */
+header,.header,.navbar{
+  background:rgba(255,244,250,.96)!important;
+  border-bottom:2px solid rgba(255,20,147,.20)!important;
+  box-shadow:0 8px 28px rgba(201,0,104,.09)!important;
+}
+
+/* Pink navigation */
+nav a,.nav a{
+  color:#9f185d!important;
+}
+nav a:hover,.nav a:hover{
+  color:var(--dee-hot)!important;
+}
+nav a::after,.nav a::after{
+  background:linear-gradient(90deg,var(--dee-hot),var(--dee-deep))!important;
+  height:2px!important;
+}
+
+/* Hero gets a much richer pink glow */
+.hero,.hero-section{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,20,147,.24),transparent 48%),
+    linear-gradient(135deg,#fff3f9,#ffe0ef 52%,#fff8fc)!important;
+}
+
+/* Stronger logo glow without changing logo */
+.hero-logo{
+  filter:drop-shadow(0 8px 24px rgba(255,20,147,.25))!important;
+}
+
+/* Pink CTA/buttons */
+button,.btn,.cta,a.button{
+  background:linear-gradient(135deg,#ff1493,#e40073)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 8px 22px rgba(228,0,115,.22)!important;
+}
+button:hover,.btn:hover,.cta:hover,a.button:hover{
+  background:linear-gradient(135deg,#ff2aa0,#c90068)!important;
+  box-shadow:0 12px 30px rgba(228,0,115,.32)!important;
+}
+
+/* Pink section headings */
+section h2{
+  color:#a91662!important;
+}
+section h2::after{
+  background:linear-gradient(90deg,#ff1493,#c90068)!important;
+  width:55px!important;
+  height:3px!important;
+}
+
+/* New collection — visibly pink */
+.dl-new-products-section{
+  background:
+    radial-gradient(circle at 5% 15%,rgba(255,20,147,.14),transparent 27%),
+    radial-gradient(circle at 95% 80%,rgba(255,75,170,.12),transparent 25%),
+    linear-gradient(180deg,#fff1f8,#ffe6f2 100%)!important;
+}
+.dl-new-products-section::before{
+  border:1px solid rgba(255,20,147,.20)!important;
+}
+
+/* Collection kicker */
+.dl-new-kicker{
+  color:#fff!important;
+  background:linear-gradient(135deg,#ff1493,#d60070)!important;
+  border:none!important;
+  box-shadow:0 8px 22px rgba(214,0,112,.22)!important;
+}
+
+/* Product cards: white keeps the pink from becoming overwhelming */
+.product-card,.product,.card,.dl-new-product{
+  border:1px solid rgba(255,20,147,.20)!important;
+  box-shadow:0 8px 28px rgba(175,35,100,.10)!important;
+}
+.product-card:hover,.product:hover,.card:hover,.dl-new-product:hover{
+  border-color:rgba(255,20,147,.42)!important;
+  box-shadow:0 18px 42px rgba(201,0,104,.18)!important;
+}
+
+/* Product badges */
+.dl-new-badge{
+  color:#fff!important;
+  background:linear-gradient(135deg,#ff1493,#c90068)!important;
+  border:none!important;
+  box-shadow:0 6px 16px rgba(201,0,104,.25)!important;
+}
+
+/* Product titles and labels */
+.dl-new-number{
+  color:#d52278!important;
+}
+.dl-new-info h3{
+  color:#8e124f!important;
+}
+.dl-new-info p{
+  color:#ad6686!important;
+}
+
+/* Pink accents around common cards/sections */
+.product-card:hover .product-title,
+.product:hover h3,
+.card:hover h3{
+  color:#d51478!important;
+}
+
+/* Smooth, restrained pink shimmer */
+.hero::before,.hero-section::before{
+  background:linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255,255,255,.30) 50%,
+    transparent 62%
+  )!important;
+}
+
+/* Mobile */
+@media(max-width:700px){
+  body{
+    background:
+      radial-gradient(circle at 50% 0,rgba(255,20,147,.13),transparent 35%),
+      #fff8fc!important;
+  }
+}
+</style>
+
+</body>
+</html>
